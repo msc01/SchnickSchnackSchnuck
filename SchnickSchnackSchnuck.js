@@ -7,29 +7,32 @@
 /* vergleich vergleicht die Eingaben und gibt den Gewinner zurück */
 
 var vergleich = function (auswahl1, auswahl2) {
+	auswahl1 = auswahl1.toLowerCase(); // .trim()?!
+	auswahl2 = auswahl2.toLowerCase(); //.trim()!?
     if (auswahl1 === auswahl2) {
         return "Unentschieden!";
-    } else if (auswahl1 === "Stein") {
-        if (auswahl2 === "Schere") {
+    } else if (auswahl1 === "stein") {
+        if (auswahl2 === "schere") {
             return "Stein gewinnt";
         } else {
             return "Papier gewinnt!";
         }
-    } else if (auswahl1 === "Papier") {
-        if (auswahl2 === "Stein") {
+    } else if (auswahl1 === "papier") {
+        if (auswahl2 === "stein") {
             return "Papier gewinnt!";
         }
         else {
             return "Schere gewinnt!";
         }
-    }
-    else if (auswahl1 === "Schere") {
-        if (auswahl2 === "Stein") {
+    } else if (auswahl1 === "schere") {
+        if (auswahl2 === "stein") {
             return "Stein gewinnt!";
         }
         else {
             return "Schere gewinnt!";
         }
+    } else {
+    	return "Falsche Eingabe!?"
     }
 };
 
@@ -39,11 +42,11 @@ var vergleich = function (auswahl1, auswahl2) {
 var auswahl = prompt("Bitte Schere, Stein oder Papier eingeben:");
 var computerAuswahl = Math.random();
 if (computerAuswahl < 0.34) {
-	computerAuswahl = "Stein";
+	computerAuswahl = "stein";
 } else if(computerAuswahl <= 0.67) {
-	computerAuswahl = "Papier";
+	computerAuswahl = "papier";
 } else {
-	computerAuswahl = "Schere";
+	computerAuswahl = "schere";
 } 
 
 alert(vergleich(auswahl, computerAuswahl));
