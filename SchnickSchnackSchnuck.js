@@ -7,8 +7,8 @@
 /* vergleich vergleicht die Eingaben und gibt den Gewinner zurück */
 
 var vergleich = function (auswahl1, auswahl2) {
-	auswahl1 = auswahl1.toLowerCase(); // .trim()?!
-	auswahl2 = auswahl2.toLowerCase(); //.trim()!?
+	auswahl1 = auswahl1.toLowerCase().trim();
+	auswahl2 = auswahl2.toLowerCase().trim();
     if (auswahl1 === auswahl2) {
         return "Unentschieden!";
     } else if (auswahl1 === "stein") {
@@ -49,4 +49,4 @@ if (computerAuswahl < 0.34) {
 	computerAuswahl = "schere";
 } 
 
-alert(vergleich(auswahl, computerAuswahl));
+alert("Der Computer hatte " + computerAuswahl + ". " + vergleich(auswahl, computerAuswahl));
