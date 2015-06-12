@@ -52,6 +52,8 @@ var erzeugeComputerAuswahl = function () {
 
 var spielerAuswahl = prompt("Bitte Schere, Stein oder Papier eingeben:");
 var computerAuswahl = erzeugeComputerAuswahl();
+
 var meldung = "Du hast " + spielerAuswahl.substr(0, 1).toUpperCase() + spielerAuswahl.substr(1) + " und der Computer hat " + computerAuswahl.substr(0, 1).toUpperCase() + computerAuswahl.substr(1) + ".\n";
 meldung = meldung + vergleich(spielerAuswahl, computerAuswahl);
+
 alert(meldung);
