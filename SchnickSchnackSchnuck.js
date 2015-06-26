@@ -1,5 +1,6 @@
 /* Schnick, Schnack, Schnuck - einfaches Schere, Stein, Papier - Spiel in JavaScript/HTML */
 /* ====================================================================================== */
+var spielerAuswahl;
 
 /* Funktionsblock */
 /* -------------- */
@@ -45,15 +46,34 @@ var erzeugeComputerAuswahl = function () {
 	} else {
 		return "schere";
 	} 	
-}
+};
+
+var ermittleSpielerAuswahl = function () {
+	var spielerAuswahl = "keine";
+	
+  var eingabe = document.getElementById("eingabe");
+	
+  for (var i = 0; i < eingabe.length; i++) {
+		if (eingabe[i].checked) {
+			spielerAuswahl = eingabe[i].value;
+		};
+	};
+	
+	return(spielerAuswahl);
+};
 
 /* Hauptteil */
 /* --------- */
+var spielen = function () {
+  var spielerAuswahl = ermittleSpielerAuswahl();
+  var computerAuswahl = erzeugeComputerAuswahl();	
 
-var spielerAuswahl = prompt("Bitte Schere, Stein oder Papier eingeben:");
-var computerAuswahl = erzeugeComputerAuswahl();
+  var meldung = "Du hast " + spielerAuswahl.substr(0, 1).toUpperCase() + spielerAuswahl.substr(1) + " und der Computer hat " + computerAuswahl.substr(0, 1).toUpperCase() + computerAuswahl.substr(1) + ".\n";
+  var meldung = meldung + vergleich(spielerAuswahl, computerAuswahl);
 
-var meldung = "Du hast " + spielerAuswahl.substr(0, 1).toUpperCase() + spielerAuswahl.substr(1) + " und der Computer hat " + computerAuswahl.substr(0, 1).toUpperCase() + computerAuswahl.substr(1) + ".\n";
-meldung = meldung + vergleich(spielerAuswahl, computerAuswahl);
+  display(meldung);	
+  
+};
 
-alert(meldung);
+
+

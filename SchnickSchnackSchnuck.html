@@ -12,26 +12,22 @@
   <body>
     <h1>Schnick, Schnack, Schnuck</h1>
     <p>Auch <em>Schere, Stein, Papier</em> genannt.</p>
-		<p>Es gelten folgende Regeln:
-		  <ul>
-			  <li>Die Schere schneidet das Papier (Schere gewinnt),</li>
-			  <li>das Papier wickelt den Stein ein (Papier gewinnt) und</li>
-			  <li>der Stein macht die Schere stumpf (Stein gewinnt).</li>
-			  <li>Entscheiden sich beide Spieler f&uumlr dasselbe Element, wird das Spiel als Unentschieden gewertet.</li>
-		  </ul>
-		</p>
-		<p>Ablauf:
-		  <ul>
-			  <li>Start mit den Tasten CMD + R.</li>
-				<li>Der Spieler w&aumllt zwischen Schere, Stein oder Papier aus.</li>
-			  <li>Der Computer w&aumlhlt ebenfalls zuf&aumlllig eines der Elemente aus.</li>
-			  <li>Anschlie&szligend vergleicht der Computer beide Elemente und ermittelt den Gewinner anhand o.g. Regeln</li>
-		  </ul>
-		</p>
-		
-		
-    <script src="SchnickSchnackSchnuck.js" defer></script>
-    <noscript>Der Browser kann kein JavaScript!</noscript>
+		<form id="eingabe">
+			<fieldset>
+				<legend>Deine Auswahl:</legend>
+				<input type="radio" name="auswahl" value="schere"><b>Schere</b> schneidet das Papier (Schere gewinnt gegen Papier)<br>
+				<input type="radio" name="auswahl" value="stein"><b>Stein</b> macht die Schere stumpf (Stein gewinnt gegen Schere)<br>
+				<input type="radio" name="auswahl" value="papier"><b>Papier</b> wickelt den Stein ein (Papier gewinnt gegen Stein)<br>
+			</fieldset>
+		</form>		
+
+		<button onclick="spielen()">Spielen</button>
+
+		<p id="ausgabe"></p>
+
+    <script src="display.js"></script>
+    <script src="SchnickSchnackSchnuck.js"></script>
+    <noscript>Dieser Browser versteht leider kein JavaScript!</noscript>
   
 	</body>
 </html>
